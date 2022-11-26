@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.*;
-
 public class Main {
     public static void main(String[] args) {
         List<Clientes> personList = new ArrayList<Clientes>();
@@ -19,23 +18,24 @@ public class Main {
             }
         }
         Collections.sort(personList);
-        System.out.println("Nome do cliente no início da lista é: " + personList.get(0).getName() + " número de telefone: " + personList.get(0).getPhone());
+        System.out.println("Nome do cliente no início da lista é: " + personList.get(0).getName() + "\n número de telefone: " + personList.get(0).getPhone());
         while (true) {
             if (personList.isEmpty()) {
                 break;
             }
             else {
-                if(personList.size() >= 1) {
-                    Scanner sc = new Scanner(System.in);
-                    System.out.println("Apagar cliente do início da lista emostrar o proximo? (Y)");
-                    if (sc.next().equalsIgnoreCase("Y")) {
-                        personList.remove(0);
-                        System.out.println("Nome do cliente no início da lista é: " + personList.get(0).getName() + " número de telefone: " + personList.get(0).getPhone());
-                    }
-                    else {
-                        break;
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Apagar cliente do início da lista emostrar o proximo? (Y)");
+                if (sc.next().equalsIgnoreCase("Y")) {
+                    personList.remove(0);
+                    if (personList.size() >= 1) {
+                        System.out.println("Nome do cliente no início da lista é: " + personList.get(0).getName() + "\n número de telefone: " + personList.get(0).getPhone());
                     }
                 }
+                else {
+                    break;
+                }
+
             }
         }
     }
