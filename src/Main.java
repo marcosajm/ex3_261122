@@ -19,12 +19,24 @@ public class Main {
             }
         }
         Collections.sort(personList);
-        System.out.println("Cliente no início da lista " + personList.get(0).getName());
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Apagar cliente do início da lista emostrar o proximo? (Y/N)");
-        if(sc.next().equalsIgnoreCase("Y")) {
-            personList.remove(0);
-            System.out.println("Cliente no início da lista " + personList.get(0).getName() +' ' + personList.get(0).getPhone());
+        System.out.println("Nome do cliente no início da lista é: " + personList.get(0).getName() + " número de telefone: " + personList.get(0).getPhone());
+        while (true) {
+            if (personList.size() < 1) {
+                break;
+            }
+            else {
+                if(personList.size() >= 1) {
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println("Apagar cliente do início da lista emostrar o proximo? (Y)");
+                    if (sc.next().equalsIgnoreCase("Y")) {
+                        personList.remove(0);
+                        System.out.println("Nome do cliente no início da lista é: " + personList.get(0).getName() + " número de telefone: " + personList.get(0).getPhone());
+                    } else {
+                        break;
+                    }
+                }
+            }
+
         }
     }
 }
