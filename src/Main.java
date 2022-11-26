@@ -21,7 +21,7 @@ public class Main {
         Collections.sort(personList);
         System.out.println("Nome do cliente no início da lista é: " + personList.get(0).getName() + " número de telefone: " + personList.get(0).getPhone());
         while (true) {
-            if (personList.size() < 1) {
+            if (personList.isEmpty()) {
                 break;
             }
             else {
@@ -31,12 +31,12 @@ public class Main {
                     if (sc.next().equalsIgnoreCase("Y")) {
                         personList.remove(0);
                         System.out.println("Nome do cliente no início da lista é: " + personList.get(0).getName() + " número de telefone: " + personList.get(0).getPhone());
-                    } else {
+                    }
+                    else {
                         break;
                     }
                 }
             }
-
         }
     }
 }
